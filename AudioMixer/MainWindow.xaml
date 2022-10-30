@@ -1,0 +1,15 @@
+﻿<Window x:Class="AudioMixer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AudioMixer"
+        mc:Ignorable="d"
+        Title="AudioMixer" Height="450" Width="800"
+        Background="#37565d">
+    <StackPanel Width="700">
+        <Button Name="b1" Height="30" Margin="7" Background="#ae97ba"  Click="btnOpenFile_Click" BorderThickness="0" >Load 1st File</Button>
+        <Button Name="b2" Height="30" Margin="7" Background="#ae97ba"  Click="btnOpenFile_Click" BorderThickness="0">Load 2nd File</Button>
+        <Button Height="30" Margin="7" Background="#ae97ba" Click="btnMixFiles_Click" BorderThickness="0">Mix Files</Button>
+    </StackPanel>
+</Window>
