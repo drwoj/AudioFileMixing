@@ -7,9 +7,49 @@
         mc:Ignorable="d"
         Title="AudioMixer" Height="450" Width="800"
         Background="#37565d">
+    <Window.Resources>
+        
+        <Style TargetType="Button" x:Key="RoundButton">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                    <Setter Property="Width" Value="100" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Margin" Value="7" />
+                </Style>
+                
+                
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+
+
     <StackPanel Width="700">
-        <Button Name="b1" Height="30" Margin="7" Background="#ae97ba"  Click="btnOpenFile_Click" BorderThickness="0" >Load 1st File</Button>
-        <Button Name="b2" Height="30" Margin="7" Background="#ae97ba"  Click="btnOpenFile_Click" BorderThickness="0">Load 2nd File</Button>
-        <Button Height="30" Margin="7" Background="#ae97ba" Click="btnMixFiles_Click" BorderThickness="0">Mix Files</Button>
+        <StackPanel Orientation="Horizontal" Margin="-3 20 0 10">
+            <Button Style="{DynamicResource RoundButton}" Uid="1"  BorderThickness="0" Background="#b0a8b9"  Click="btnOpenFile_Click"  >Load 1st File</Button>
+            <Button Style="{DynamicResource RoundButton}" Uid="2"  BorderThickness="0" Background="#b0a8b9"  Click="btnOpenFile_Click" >Load 2nd File</Button>
+            <Button  Style="{DynamicResource RoundButton}"   BorderThickness="0" Background="#b0a8b9" Click="btnMixFiles_Click" >Mix Files</Button>
+            <Button  Style="{DynamicResource RoundButton}"   BorderThickness="0" Background="#b0a8b9" Click="btnSaveFile_Click" >Save File</Button>
+            <StackPanel Height="30" Margin="20 0 0 0">
+                <RadioButton Name="algC" Foreground="White" >Asm</RadioButton>
+                <RadioButton Name="AlgAsm" Foreground="White" IsChecked="true">C#</RadioButton>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" >
+            <Label Width ="115"  Background="#37565d"  Foreground="white">Number of Threads:</Label>
+            <TextBox Width="70" Name="textThreads" MaxLength="2" PreviewTextInput="NumberValidationTextBox" Background="Transparent" BorderThickness="0" Margin="7 0 7 0" Foreground="white" VerticalAlignment="Center">1</TextBox>
+            <Slider Name="sliderThreads" IsSnapToTickEnabled="true" TickFrequency="1" Minimum="1" Maximum="64" Value="1" Width="500" ValueChanged="Slider_ValueChanged"></Slider>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Width="115" Foreground="White">Time of Mixing:</Label>
+            <Label  Width="70" Name="textTime" Margin="5 0 7 0"  Foreground="white">00:00:00ms</Label>
+        </StackPanel>
     </StackPanel>
+    
+    
 </Window>
+    
+    
